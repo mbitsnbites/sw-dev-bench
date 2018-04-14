@@ -48,13 +48,6 @@ function 2_1_cmake_ninja {
   popd > /dev/null && rm -rf build
 }
 
-function 2_2_cmake_make {
-  mkdir build && pushd build > /dev/null && cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release .. > /dev/null
-  popd > /dev/null && rm -rf build
-  mkdir build && pushd build > /dev/null && cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug .. > /dev/null
-  popd > /dev/null && rm -rf build
-}
-
 
 #------------------------------------------------------------------------------
 # Program entry.
@@ -103,11 +96,6 @@ echo
 echo "2.1) CMake (Ninja)"
 time 2_1_cmake_ninja
 echo
-
-echo "2.2) CMake (Make)"
-time 2_2_cmake_make
-echo
-
 
 #------------------------------------------------------------------------------
 # Compilation benchmarks.
